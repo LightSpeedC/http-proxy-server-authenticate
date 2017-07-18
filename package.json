@@ -1,0 +1,21 @@
+{
+  "name": "http-proxy-server-authenticate",
+  "version": "0.0.0",
+  "description": "proxy server with proxy authenticate.",
+  "main": "http-proxy-server-authenticate.js",
+  "scripts": {
+    "start": "node http-proxy-server-authenticate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LightSpeedC/http-proxy-server-authenticate.git"
+  },
+  "keywords": [],
+  "author": "LightSpeedC <Kazuaki.Nishizawa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LightSpeedC/http-proxy-server-authenticate/issues"
+  },
+  "homepage": "https://github.com/LightSpeedC/http-proxy-server-authenticate#readme"
+}
