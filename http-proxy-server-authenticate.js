@@ -26,7 +26,7 @@ const PROXY_URL = process.argv[3] || process.env.AUTH_PROXY || null;
 const PROXY_HOST = PROXY_URL ?  url.parse(PROXY_URL).hostname    : null;
 const PROXY_PORT = PROXY_URL ? (url.parse(PROXY_URL).port || 80) : null;
 const PROXY_AUTH = PROXY_URL ?
-	Buffer.from(url.parse(PROXY_URL).auth).toString('base64')    : null;
+	Buffer.from(url.parse(PROXY_URL).auth || '').toString('base64')    : null;
 
 const getNow = () => new Date().toLocaleTimeString();
 console.log(new Date().toLocaleDateString(), getNow());
@@ -87,7 +87,7 @@ const server = http.createServer(function onCliReq(cliReq, cliRes) {
 		onErr(err, 'svrReq', x.hostname + ':' + (x.port || 80), svrSoc);
 	});
 })
-.on('clientError', (err, soc) => onErr(err, 'cliErr', '', soc))
+//.on('clientError', (err, soc) => onErr(err, 'cliErr', '', soc))
 .on('connect', function onCliConn(cliReq, cliSoc, cliHead) {
 	const x = url.parse('https://' + cliReq.url);
 	let svrSoc;
